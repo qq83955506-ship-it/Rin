@@ -13,7 +13,8 @@ function Footer() {
     const [, setLocation] = useLocation()
     const [modeState, setModeState] = useState<ThemeMode>('system');
     const config = useContext(ClientConfigContext);
-   // const footerHtml = config.get<string>('footer');
+   const footerHtml = ''; // config.get<string>('footer');
+
     const footerHtmlRef = useRef<HTMLDivElement | null>(null);
     const mountedScriptNodesRef = useRef<HTMLScriptElement[]>([]);
     const loginEnabled = config.getBoolean('login.enabled');
