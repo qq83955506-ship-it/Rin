@@ -13,7 +13,7 @@ function Footer() {
     const [, setLocation] = useLocation()
     const [modeState, setModeState] = useState<ThemeMode>('system');
     const config = useContext(ClientConfigContext);
-    const footerHtml = config.get<string>('footer');
+   // const footerHtml = config.get<string>('footer');
     const footerHtmlRef = useRef<HTMLDivElement | null>(null);
     const mountedScriptNodesRef = useRef<HTMLScriptElement[]>([]);
     const loginEnabled = config.getBoolean('login.enabled');
@@ -28,7 +28,7 @@ function Footer() {
     
 
     
-/*
+
     useEffect(() => {
         const container = footerHtmlRef.current;
         if (!container) {
@@ -68,7 +68,7 @@ function Footer() {
             mountedScriptNodesRef.current = [];
         };
     }, [footerHtml])
-*/
+
 
 
 
@@ -100,7 +100,7 @@ function Footer() {
                 <link rel="alternate" type="application/json" title={siteName} href="/rss.json" />
             </Helmet>
             <div className="flex flex-col mb-8 space-y-2 justify-center items-center t-primary ani-show">
-               {/* <div ref={footerHtmlRef} />*/}
+             <div ref={footerHtmlRef} />
                 <p className='text-sm text-neutral-500 font-normal link-line'>
                     <span onDoubleClick={() => {
                         if(doubleClickTimes >= 2){ // actually need 3 times doubleClick
